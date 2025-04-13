@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Memory Sequence Game",
+  title: "Memory Master",
   description: "Test your memory with a fun sequence game",
   icons: {
     icon: "/logoo.ico",
