@@ -148,10 +148,13 @@ export default function Home() {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             onKeyDown={handleKeyDown}
+            onCopy={(e) => e.preventDefault()}
+            onContextMenu={(e) => e.preventDefault()}
             placeholder="Type the sequence (e.g. 1 2 3)"
             disabled={!gameStarted || showingSequence}
             className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-purple-400"
           />
+
         </CardContent>
 
         <CardFooter className="flex flex-col gap-4 border-t border-white/10 pt-4">
