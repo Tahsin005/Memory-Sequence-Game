@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Memory Sequence Game",
   description: "Test your memory with a fun sequence game",
+  icons: {
+    icon: "/logoo.ico",
+  },
 };
 
 export default function RootLayout({
