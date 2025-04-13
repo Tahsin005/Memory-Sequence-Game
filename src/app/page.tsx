@@ -83,8 +83,8 @@ export default function Home() {
       }, 2000);
     } else {
       if (currentRound > highScore) {
-        setHighScore(currentRound);
-        localStorage.setItem('memory_high_score', String(currentRound));
+        setHighScore(currentRound - 1);
+        localStorage.setItem('memory_high_score', String(currentRound - 1));
       }
       setMessage(`😭 Game over! You remembered ${currentRound - 1} rounds.\nSequence was: ${sequence.join(" ")}`);
       setInstructions('Press Start to play again.');
@@ -118,14 +118,18 @@ export default function Home() {
         </CardHeader>
 
         <CardContent className="pt-6 space-y-6">
+          {highScore > 0 && (
+            <div className="flex justify-center items-center gap-4">
+              <div className="px-4 py-1 rounded-full bg-emerald-600/20 text-emerald-300 font-semibold">
+                  🏆 High Score: {highScore}
+              </div>
+            </div>
+          )}
           {(gameStarted || currentRound > 0) && (
             <div className="flex justify-center items-center gap-4">
               <div className="px-4 py-1 rounded-full bg-indigo-500/20 text-indigo-200 font-semibold flex items-center">
                 <Trophy className="h-4 w-4 mr-1.5" />
                 Round {currentRound}
-              </div>
-              <div className="px-4 py-1 rounded-full bg-emerald-600/20 text-emerald-300 font-semibold flex items-center">
-                🏆 High Score: {highScore}
               </div>
             </div>
           )}
